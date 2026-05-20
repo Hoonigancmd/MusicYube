@@ -1,0 +1,4 @@
+#!/bin/bash
+shopt -s globstar
+javac -d bin src/**/*.java src/Main.java
+java -cp bin Main
