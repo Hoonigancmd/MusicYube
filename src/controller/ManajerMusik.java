@@ -21,7 +21,7 @@ public class ManajerMusik{
             aiStream=AudioSystem.getAudioInputStream(this.user.getPlaylist().get(0).getFile());
             clip=AudioSystem.getClip();
         }catch(Exception e){
-            JOptionPane.showMessageDialog(fParent,JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(fParent,"Error: "+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
     }
     public boolean isMemutar(){
