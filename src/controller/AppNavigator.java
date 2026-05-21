@@ -14,12 +14,12 @@ public class AppNavigator {
     }
     public void viewLoginUI(){
         LoginUI loginUI =new LoginUI(this);
-        loginUI.isVisible();
+        loginUI.setVisible(true);
         loginUI.setLocationRelativeTo(mainFrame);
     }
     public void viewMusicUI(User user){
         MusicUI musicUI =new MusicUI(user, this);
-        musicUI.isVisible();
+        musicUI.setVisible(true);
         musicUI.setLocationRelativeTo(mainFrame);
 
     }
