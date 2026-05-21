@@ -2,8 +2,6 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
 */
-package musicyube;
-
 import javax.swing.SwingUtilities;
 
 public class MusicYube {
@@ -52,8 +50,4 @@ class ManajerMusik {
     public void setPlayOrPause(PlayOrPause state) {
         isMemutar = (state == PlayOrPause.PLAY);
     }
-}
-
-enum PlayOrPause {
-    PLAY, PAUSE
 }

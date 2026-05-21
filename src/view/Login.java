@@ -1,8 +1,15 @@
 /*
+<<<<<<< HEAD:src/view/LoginUI.java
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
 */
 package musicyube;
+=======
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package view;
+>>>>>>> 84339a67a460486b421be99877b0cdb408772abf:src/view/Login.java
 
 import java.util.ArrayList;
 import java.util.List;
