@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package view;
+package musicyube;
 
 /**
  *
  * @author TokDeLokTo
  */
-public class LoginUI extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
     /**
-     * Creates new form LoginUI
+     * Creates new form Login
      */
-    public LoginUI() {
+    public Login() {
         initComponents();
         getRootPane().setDefaultButton(buttonLogin);
     }

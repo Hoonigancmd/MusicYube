@@ -17,6 +17,9 @@ public class MusicYube {
         // TODO code application logic here
         SwingUtilities.invokeLater(() -> new Playlist().setVisible(true));
         SwingUtilities.invokeLater(() -> new Login().setVisible(true));
+        FileMusik fm = new FileMusik("C:/Music/lagu.wav", 1);
+        System.out.println("Testing: " + fm.toString());
+        System.out.println("Format valid: " + fm.isFormatValid());
     }
     
 }
