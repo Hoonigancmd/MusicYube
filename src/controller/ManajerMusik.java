@@ -19,6 +19,8 @@ public class ManajerMusik{
         
     }
     public void setPlayOrPause(PlayOrPause playOrPause){
-
+        if(playOrPause==PlayOrPause.PAUSE){
+            
+        }
     }
 }
