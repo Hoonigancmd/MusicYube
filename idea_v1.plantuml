@@ -24,7 +24,6 @@ package src{
     }
 
     +class AppNavigator{
-      -mainFrame:JFrame
       +AppNavigator()
       +start():void
       +viewLoginUI():void
