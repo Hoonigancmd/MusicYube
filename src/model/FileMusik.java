@@ -185,8 +185,4 @@ public class FileMusik {
     public int hashCode() {
         return alamatFile != null ? alamatFile.hashCode() : 0;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 760ee9db77990b014ea533457376a73f88d29214
