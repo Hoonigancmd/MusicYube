@@ -3,6 +3,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
 */
 package view;
+import java.util.List;
+
 import controller.*;
 import model.*;
 
@@ -23,8 +25,38 @@ public class MusicUI extends javax.swing.JFrame {
         this.manajerMusik = new ManajerMusik(user);
         initComponents();
         lblUser.setText("User: " + user.getUsername());
+         tampilkanPlaylist(user);
     }
 
+    private void tampilkanPlaylist(User user) {
+        List<FileMusik> playlist = user.getPlaylist();
+        
+        if (playlist.isEmpty()) {
+            txtPlaylist.setText("Playlist kosong");
+        } else {
+            StringBuilder sb = new StringBuilder();
+            sb.append("=== DAFTAR LAGU ===\n\n");
+            
+            for (int i = 0; i < playlist.size(); i++) {
+                FileMusik musik = playlist.get(i);
+                String namaFile = musik.getFile().getName();
+                
+                String judulLagu = namaFile.replace(".wav", "");
+                
+                sb.append((i + 1)).append(". ").append(judulLagu).append("\n");
+                
+                if (musik.isDiputar()) {
+                    sb.append(" ||Sedang diputar||\n");
+                }
+                if (musik.isDipilih()&& !musik.isDiputar()) {
+                    sb.append(" <Dipilih>\n");
+                }
+                sb.append("\n");
+            }
+            
+            txtPlaylist.setText(sb.toString());
+        }
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -36,6 +68,7 @@ public class MusicUI extends javax.swing.JFrame {
         lblUser = new javax.swing.JLabel();
         bLogout = new javax.swing.JButton();
         txtPlaylist = new javax.swing.JTextArea();
+        txtPlaylist.setLineWrap(true);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -53,7 +86,7 @@ public class MusicUI extends javax.swing.JFrame {
         lblPlaylist.setFont(new java.awt.Font("Segoe UI", 0, 18)); 
         lblPlaylist.setText("Playlist");
 
-        bPlayPause.setText("Play/Pause");
+        bPlayPause.setText("Play");
         bPlayPause.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bPlayPauseActionPerformed(evt);
