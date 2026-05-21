@@ -19,7 +19,7 @@ package src{
       -clip:Clip
       +ManajerMusik(user:User)
       +isMemutar():boolean
-      +setPlayOrPause(enumPlayOrPause:PlayOrPause)
+      +setPlayOrPause(enumPlayOrPause:PlayOrPause):void
     }
 
     +class AppNavigator{
@@ -104,7 +104,7 @@ ActionListener <|.. LoginUI
 ActionListener <|.. MusicUI
 FocusListener <|.. LoginUI
 User <-- ManajerMusik
-PlayOrPause <-- ManajerMusik
+PlayOrPause +-- ManajerMusik
 FileMusik *.. User
 ManajerMusik <-- MusicUI
 
