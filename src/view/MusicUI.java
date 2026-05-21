@@ -2,7 +2,9 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
 */
-package musicyube;
+package view;
+import controller.*;
+import model.*;
 
 public class MusicUI extends javax.swing.JFrame {
 
@@ -136,10 +138,10 @@ public class MusicUI extends javax.swing.JFrame {
 
     private void bPlayPauseActionPerformed(java.awt.event.ActionEvent evt) {
         if (manajerMusik.isMemutar()) {
-            manajerMusik.setPlayOrPause(PlayOrPause.PAUSE);
+            manajerMusik.setPlayOrPause(ManajerMusik.PlayOrPause.PAUSE);
             bPlayPause.setText("Play");
         } else {
-            manajerMusik.setPlayOrPause(PlayOrPause.PLAY);
+            manajerMusik.setPlayOrPause(ManajerMusik.PlayOrPause.PLAY);
             bPlayPause.setText("Pause");
         }
     }
