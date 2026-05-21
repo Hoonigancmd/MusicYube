@@ -8,12 +8,12 @@ package musicyube;
  *
  * @author TokDeLokTo
  */
-public class Login extends javax.swing.JFrame {
+public class LoginUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form Login
+     * Creates new form LoginUI
      */
-    public Login() {
+    public LoginUI() {
         initComponents();
         getRootPane().setDefaultButton(buttonLogin);
     }
