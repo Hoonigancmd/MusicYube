@@ -102,6 +102,7 @@ JFrame <|-- LoginUI
 ActionListener <|.. LoginUI 
 ActionListener <|.. MusicUI
 FocusListener <|.. LoginUI
+JOptionPane <.. LoginUI
 User <-- ManajerMusik
 AppNavigator <-- MusicUI
 AppNavigator <-- LoginUI
