@@ -17,7 +17,8 @@ package src{
       -user:User
       -aiStream:AudioInputStream
       -clip:Clip
-      +ManajerMusik(user:User)
+      -fParent:JFrame
+      +ManajerMusik(user:User,fParent:JFrame)
       +isMemutar():boolean
       +setPlayOrPause(enumPlayOrPause:PlayOrPause):void
     }
@@ -98,13 +99,15 @@ interface FocusListener
 AppNavigator <.. Main
 JFrame <|-- MusicUI
 JFrame <|-- LoginUI
-AppNavigator <-- MusicUI
-AppNavigator <-- LoginUI
 ActionListener <|.. LoginUI 
 ActionListener <|.. MusicUI
 FocusListener <|.. LoginUI
 User <-- ManajerMusik
+AppNavigator <-- MusicUI
+AppNavigator <-- LoginUI
 PlayOrPause +-- ManajerMusik
+JOptionPane <.. ManajerMusik
+AudioSystem <.. ManajerMusik
 FileMusik *.. User
 ManajerMusik <-- MusicUI
 
