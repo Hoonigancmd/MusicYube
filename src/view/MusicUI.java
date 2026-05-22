@@ -37,7 +37,6 @@ public class MusicUI extends javax.swing.JFrame {
             txtPlaylist.setText("Playlist kosong");
         } else {
             StringBuilder sb = new StringBuilder();
-            sb.append("=== DAFTAR LAGU ===\n\n");
             
             for (int i = 0; i < playlist.size(); i++) {
                 FileMusik musik = playlist.get(i);
