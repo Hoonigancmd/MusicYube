@@ -34,13 +34,12 @@ public class ManajerMusik{
     public void setPlayOrPause(PlayOrPause playOrPause){
         if(playOrPause==PlayOrPause.PAUSE&&clip!=null&&clip.isRunning()){
             clip.stop();
-            for(int i=0;i<user.getPlaylist().size();i++){
-                FileMusik currFM=user.getPlaylist().get(i);
-                if(currFM.isDiputar()){
-                    currFM.setStatusDiputar(false);
+            for(FileMusik fm:user.getPlaylist()){
+                if(fm.isDipilih()){
+                    fm.setStatusDiputar(false);
                 }
             }
-        }else if(playOrPause==PlayOrPause.PLAY&&clip!=null&&clip.isRunning()){
+        }else if(playOrPause==PlayOrPause.PLAY&&clip!=null){
             clip.start();
             for(FileMusik fm:user.getPlaylist()){
                 if(fm.isDipilih()){

@@ -19,13 +19,15 @@ public class MusicUI extends javax.swing.JFrame {
     private javax.swing.JButton bPlayPause;
     private javax.swing.JButton bLogout;
     private ManajerMusik manajerMusik;
+    private User user;
 
     public MusicUI(User user, AppNavigator appNav) {
         this.appNav = appNav;
+        this.user=user;
         this.manajerMusik = new ManajerMusik(user);
         initComponents();
         lblUser.setText("User: " + user.getUsername());
-         tampilkanPlaylist(user);
+        tampilkanPlaylist(user);
     }
 
     private void tampilkanPlaylist(User user) {
@@ -173,9 +175,11 @@ public class MusicUI extends javax.swing.JFrame {
         if (manajerMusik.isMemutar()) {
             manajerMusik.setPlayOrPause(ManajerMusik.PlayOrPause.PAUSE);
             bPlayPause.setText("Play");
+            tampilkanPlaylist(user);
         } else {
             manajerMusik.setPlayOrPause(ManajerMusik.PlayOrPause.PLAY);
             bPlayPause.setText("Pause");
+            tampilkanPlaylist(user);
         }
     }
 
