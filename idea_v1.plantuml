@@ -65,17 +65,22 @@ package src{
 
     +class MusicUI{
       -appNav:AppNavigator
+      -user:User
       -txtPlaylist:JTextArea
       -txtUser:JLabel
       -lblPlaylist:JLabel
+      -lblUser:JLabel
       -bPrev:JButton
       -bNext:JButton
       -bPlayPause:JButton
       -bLogout:JButton
       -manajerMusik:ManajerMusik
       +MusicUI(user:User,appNav:AppNavigator)
-      -setComponents():void
-      -setActionListener():void
+      -initComponents():void
+      -bPrevActionPerformed(evt:ActionEvent):void
+      -bNextActionPerformed(evt:ActionEvent):void
+      -bPlayPauseActionPerformed(evt:ActionEvent):void
+      -bLogoutActionPerformed(evt:ActionEvent):void
     }
     +class LoginUI{
       -listUser:List<User>
@@ -87,9 +92,9 @@ package src{
       -lblUsername:JLabel
       -lblPassword:JLabel
       -btnLogin:JButton
-      -setComponents():void
-      -setActionListener():void
-      -setFocusListener():void
+      -initComponents():void
+      -tfPasswordActionPerformed():void
+      -btnLoginActionPerformed():void
       -setUsers():void
     }
 
