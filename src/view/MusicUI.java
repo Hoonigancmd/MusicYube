@@ -60,7 +60,7 @@ public class MusicUI extends javax.swing.JFrame {
         }
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents() {//pull ulang coba
 
         javax.swing.JPanel jPanel2 = new javax.swing.JPanel(); 
         lblPlaylist = new javax.swing.JLabel();
