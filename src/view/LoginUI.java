@@ -22,6 +22,8 @@ public class LoginUI extends javax.swing.JFrame {
     private javax.swing.JButton btnLogin;
 
     public LoginUI(AppNavigator appNav) {
+        setResizable(false);
+        setTitle("Tugas Akhir Pemlan 2026");
         this.appNav = appNav;
         initComponents();
         setUsers(); 

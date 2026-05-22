@@ -25,6 +25,21 @@ public class ManajerMusik{
             JOptionPane.showMessageDialog(fParent,"Error: "+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
     }
+    public void syncMusic(){
+        try{
+            int selectedIndex=0;
+            for(int i=0;i<this.user.getPlaylist().size();i++){
+                if(this.user.getPlaylist().get(i).isDipilih()){
+                    selectedIndex=i;
+                }
+            }
+            aiStream=AudioSystem.getAudioInputStream(this.user.getPlaylist().get(selectedIndex).getFile());
+            clip=AudioSystem.getClip();
+            clip.open(aiStream);
+        }catch(Exception e){
+
+        }
+    }
     public boolean isMemutar(){
         if(clip!=null){
             return clip.isRunning();

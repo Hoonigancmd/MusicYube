@@ -21,6 +21,7 @@ package src{
       +ManajerMusik(user:User,fParent:JFrame)
       +isMemutar():boolean
       +setPlayOrPause(enumPlayOrPause:PlayOrPause):void
+      +syncMusic():void
     }
 
     +class AppNavigator{

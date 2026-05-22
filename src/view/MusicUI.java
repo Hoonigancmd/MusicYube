@@ -22,6 +22,8 @@ public class MusicUI extends javax.swing.JFrame {
     private User user;
 
     public MusicUI(User user, AppNavigator appNav) {
+        setResizable(false);
+        setTitle("MusicYube");
         this.appNav = appNav;
         this.user=user;
         this.manajerMusik = new ManajerMusik(user);
@@ -178,12 +180,18 @@ public class MusicUI extends javax.swing.JFrame {
                 break;
             }
         }
+        bPlayPause.setText("Play");
         if(currIdx==0){
+            manajerMusik.setPlayOrPause(ManajerMusik.PlayOrPause.PAUSE);
+            manajerMusik.syncMusic();
             user.getPlaylist().get(currIdx).setStatusDipilih(true);
+            tampilkanPlaylist(user);
             return;
         }
         user.getPlaylist().get(currIdx-1).setStatusDipilih(true);
-        tampilkanPlaylist(user);   
+        tampilkanPlaylist(user);
+        manajerMusik.setPlayOrPause(ManajerMusik.PlayOrPause.PAUSE);
+        manajerMusik=new ManajerMusik(user);
     }
     private void bNextActionPerformed(java.awt.event.ActionEvent evt) {
         int nextLagu = 0;
@@ -196,12 +204,18 @@ public class MusicUI extends javax.swing.JFrame {
                 break;
             }
         }
+        bPlayPause.setText("Play");
         if(nextLagu==user.getPlaylist().size()-1){
             user.getPlaylist().get(0).setStatusDipilih(true);
+            manajerMusik.setPlayOrPause(ManajerMusik.PlayOrPause.PAUSE);
+            manajerMusik.syncMusic();
+            tampilkanPlaylist(user);
             return;
         }
         user.getPlaylist().get(nextLagu+1).setStatusDipilih(true);
         tampilkanPlaylist(user);
+        manajerMusik.setPlayOrPause(ManajerMusik.PlayOrPause.PAUSE);
+        manajerMusik.syncMusic();
     }
 
     private void bPlayPauseActionPerformed(java.awt.event.ActionEvent evt) {
