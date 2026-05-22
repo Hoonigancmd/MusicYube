@@ -186,7 +186,24 @@ public class MusicUI extends javax.swing.JFrame {
         user.getPlaylist().get(currIdx-1).setStatusDipilih(true);
         tampilkanPlaylist(user);   
     }
-    private void bNextActionPerformed(java.awt.event.ActionEvent evt) {}
+    private void bNextActionPerformed(java.awt.event.ActionEvent evt) {
+        int nextLagu = 0;
+        for(int a = 0; a < user.getPlaylist().size();a++){
+            FileMusik fm=user.getPlaylist().get(a);
+            if(fm.isDipilih()){
+                fm.setStatusDipilih(false);
+                fm.setStatusDiputar(false);
+                nextLagu = a;
+                break;
+            }
+        }
+        if(nextLagu==user.getPlaylist().size()-1){
+            user.getPlaylist().get(0).setStatusDipilih(true);
+            return;
+        }
+        user.getPlaylist().get(nextLagu+1).setStatusDipilih(true);
+        tampilkanPlaylist(user);
+    }
 
     private void bPlayPauseActionPerformed(java.awt.event.ActionEvent evt) {
         if (manajerMusik.isMemutar()) {
